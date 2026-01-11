@@ -21,7 +21,7 @@ export function RoadmapSummary() {
           </p>
         </div>
 
-        <div className="bg-card border border-border rounded-sm overflow-hidden">
+        <div className="bg-card border border-border rounded-sm overflow-hidden hidden md:block">
           {/* Table Header */}
           <div className="grid grid-cols-4 gap-4 px-6 py-4 bg-secondary/50 border-b border-border">
             <p className="text-xs font-mono text-primary uppercase tracking-wider font-bold">Phase</p>
@@ -40,6 +40,30 @@ export function RoadmapSummary() {
               <p className="text-sm text-muted-foreground">{row.objective}</p>
               <p className="text-sm text-foreground">{row.output}</p>
               <p className="text-sm font-mono text-primary text-right font-bold">{row.target}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="space-y-4 md:hidden">
+          {summaryData.map((row, index) => (
+            <div
+              key={row.phase}
+              className={`bg-card border border-border rounded-sm p-4 ${index === 0 ? "border-primary/40" : ""}`}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-sm font-mono text-foreground font-semibold">{row.phase}</p>
+                <p className="text-sm font-mono text-primary font-bold">{row.target}</p>
+              </div>
+              <div className="space-y-2">
+                <div>
+                  <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider mb-1">Objective</p>
+                  <p className="text-sm text-foreground">{row.objective}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider mb-1">Output</p>
+                  <p className="text-sm text-foreground">{row.output}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

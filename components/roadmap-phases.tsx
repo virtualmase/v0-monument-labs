@@ -137,25 +137,25 @@ const phases = [
 
 export function RoadmapPhases() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-5xl mx-auto space-y-16">
+    <section className="py-16 md:py-20 px-4 md:px-6">
+      <div className="max-w-5xl mx-auto space-y-12 md:space-y-16">
         {phases.map((phase) => (
           <div key={phase.number} className="relative">
             {/* Phase Card */}
             <div
-              className={`bg-card border rounded-sm p-8 glow-primary ${phase.status === "active" ? "border-primary/40" : "border-border"}`}
+              className={`bg-card border rounded-sm p-5 md:p-8 glow-primary ${phase.status === "active" ? "border-primary/40" : "border-border"}`}
             >
               {/* Header */}
-              <div className="flex flex-col md:flex-row md:items-start gap-6 mb-8">
+              <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6 mb-6 md:mb-8">
                 <div
-                  className={`flex items-center justify-center w-16 h-16 rounded-sm ${phase.status === "active" ? "bg-primary/20" : "bg-secondary"}`}
+                  className={`flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-sm ${phase.status === "active" ? "bg-primary/20" : "bg-secondary"}`}
                 >
                   <phase.icon
-                    className={`w-8 h-8 ${phase.status === "active" ? "text-primary" : "text-muted-foreground"}`}
+                    className={`w-6 h-6 md:w-8 md:h-8 ${phase.status === "active" ? "text-primary" : "text-muted-foreground"}`}
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
                     <span className="text-xs font-mono text-primary font-bold tracking-widest">
                       PHASE_{phase.number}
                     </span>
@@ -165,39 +165,41 @@ export function RoadmapPhases() {
                       </span>
                     )}
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-black text-foreground tracking-tight">{phase.title}</h2>
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-foreground tracking-tight">
+                    {phase.title}
+                  </h2>
                   <p className="text-sm font-mono text-muted-foreground italic">{phase.subtitle}</p>
                 </div>
-                <div className="text-right">
+                <div className="md:text-right">
                   <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Timeline</p>
-                  <p className="text-sm font-mono text-foreground">{phase.timeline}</p>
+                  <p className="text-xs md:text-sm font-mono text-foreground">{phase.timeline}</p>
                 </div>
               </div>
 
               {/* Description & Rationale */}
-              <div className="mb-8 space-y-4">
-                <p className="text-muted-foreground">{phase.description}</p>
-                <div className="bg-secondary/50 border border-border rounded-sm p-4">
+              <div className="mb-6 md:mb-8 space-y-4">
+                <p className="text-sm md:text-base text-muted-foreground">{phase.description}</p>
+                <div className="bg-secondary/50 border border-border rounded-sm p-3 md:p-4">
                   <p className="text-xs font-mono text-primary uppercase tracking-wider mb-2">Strategic Rationale</p>
-                  <p className="text-sm text-muted-foreground">{phase.rationale}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">{phase.rationale}</p>
                 </div>
               </div>
 
               {/* Milestones */}
-              <div className="mb-8">
-                <p className="text-xs font-mono text-primary uppercase tracking-wider mb-4">Key Milestones</p>
+              <div className="mb-6 md:mb-8">
+                <p className="text-xs font-mono text-primary uppercase tracking-wider mb-3 md:mb-4">Key Milestones</p>
                 <div className="space-y-3">
                   {phase.milestones.map((milestone) => (
                     <div
                       key={milestone.id}
-                      className="flex gap-4 p-4 bg-secondary/30 rounded-sm border border-border/50"
+                      className="flex gap-3 md:gap-4 p-3 md:p-4 bg-secondary/30 rounded-sm border border-border/50"
                     >
-                      <div className="flex items-center justify-center w-8 h-8 rounded-sm bg-primary/10 shrink-0">
-                        <span className="text-xs font-mono text-primary font-bold">{milestone.id}</span>
+                      <div className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-sm bg-primary/10 shrink-0">
+                        <span className="text-[10px] md:text-xs font-mono text-primary font-bold">{milestone.id}</span>
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground mb-1">{milestone.title}</p>
-                        <p className="text-sm text-muted-foreground">{milestone.description}</p>
+                        <p className="font-semibold text-sm md:text-base text-foreground mb-1">{milestone.title}</p>
+                        <p className="text-xs md:text-sm text-muted-foreground">{milestone.description}</p>
                       </div>
                     </div>
                   ))}
@@ -207,14 +209,14 @@ export function RoadmapPhases() {
               {/* KPIs */}
               <div>
                 <p className="text-xs font-mono text-primary uppercase tracking-wider mb-3">Target KPIs</p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-2 md:gap-3">
                   {phase.kpis.map((kpi, index) => (
                     <div
                       key={index}
                       className="flex items-center gap-2 px-3 py-2 bg-primary/5 border border-primary/20 rounded-sm"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-primary" />
-                      <span className="text-sm text-foreground">{kpi}</span>
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                      <span className="text-xs md:text-sm text-foreground">{kpi}</span>
                     </div>
                   ))}
                 </div>
