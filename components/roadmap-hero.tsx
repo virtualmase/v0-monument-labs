@@ -14,13 +14,6 @@ export function RoadmapHero() {
           <br />
           <span className="text-primary italic">Permanence.</span>
         </h1>
-
-        <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-          <strong className="text-foreground">Project:</strong> Monument Healthspan Operating System
-          <br />
-          <strong className="text-foreground">Strategic Thesis:</strong> Addressing aging as a treatable infrastructure
-          deficit via a full-stack Bio-AI platform.
-        </p>
       </div>
     </section>
   )
