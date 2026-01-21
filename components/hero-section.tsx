@@ -26,9 +26,12 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 md:px-10 md:py-5 rounded-sm font-bold font-mono uppercase tracking-widest transition-all shadow-lg shadow-primary/20 text-sm md:text-base">
+            <Link
+              href="/sync"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 md:px-10 md:py-5 rounded-sm font-bold font-mono uppercase tracking-widest transition-all shadow-lg shadow-primary/20 text-sm md:text-base text-center"
+            >
               Initialize Sync
-            </button>
+            </Link>
             <Link
               href="/roadmap"
               className="border border-border hover:border-primary px-8 py-4 md:px-10 md:py-5 rounded-sm font-bold font-mono uppercase tracking-widest text-foreground transition-all text-center text-sm md:text-base"

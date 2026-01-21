@@ -38,7 +38,7 @@ export function Navbar() {
         </div>
 
         <Link
-          href="/portal"
+          href="/login"
           className="hidden sm:block bg-primary hover:bg-primary/90 text-primary-foreground px-4 sm:px-6 py-2 rounded-sm text-[10px] sm:text-xs font-bold font-mono uppercase tracking-widest transition-all"
         >
           Partner_Portal
@@ -75,7 +75,7 @@ export function Navbar() {
               Roadmap
             </Link>
             <Link
-              href="/portal"
+              href="/login"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-3 rounded-sm text-xs font-bold font-mono uppercase tracking-widest transition-all text-center"
               onClick={() => setIsOpen(false)}
             >
